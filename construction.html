@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Skandha Groups | Residential Construction in Bengaluru</title>
+<meta name="description" content="Skandha Groups builds independent homes, villas, apartment blocks and extensions in Bengaluru. Estimate your construction cost online.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23000'/%3E%3Cpath d='M9 29h22M9 21h22M9 13h22' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--white:#fff;--grey-1:#F3F3F3;--grey-2:#EAEAEA;--black:#000;--text-2:#555;--line:#DDD;--font-head:"Cormorant Garamond",Georgia,serif;--font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--header-h:76px;--pad:clamp(20px,5vw,48px);--ease:cubic-bezier(.2,.7,.2,1);--y:clamp(72px,9vw,128px)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--header-h)}
+body{margin:0;font-family:var(--font-body);line-height:1.7;color:var(--black);background:var(--white);overflow-x:hidden}
+a{color:inherit;text-decoration:none}ul,ol,dl,dd{list-style:none;margin:0;padding:0}h1,h2,h3,h4,p,figure,blockquote{margin:0}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(2.3rem,4.6vw,3.8rem)}h3{font-size:1.65rem;line-height:1.15}
+p{color:var(--text-2);max-width:62ch}
+.ico{width:1em;height:1em}
+.container{width:100%;max-width:1296px;margin-inline:auto;padding-inline:var(--pad)}
+.section{padding-block:var(--y)}.bg-grey{background:var(--grey-1)}.bg-black{background:var(--black);color:var(--white)}
+.head{display:grid;gap:16px;margin-bottom:clamp(36px,5vw,64px)}
+@media(min-width:900px){.head.split{grid-template-columns:1.1fr 1fr;align-items:end;gap:80px}}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 32px;font-size:.92rem;font-weight:600;border:1px solid var(--black);background:var(--black);color:var(--white);cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.btn:hover{background:var(--white);color:var(--black)}
+.btn-light{background:var(--white);color:var(--black);border-color:var(--white)}.btn-light:hover{background:transparent;color:var(--white)}
+.btn-ghost{background:transparent;color:var(--white);border-color:var(--white)}.btn-ghost:hover{background:var(--white);color:var(--black)}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:#fff;mix-blend-mode:difference;z-index:120;pointer-events:none}
+
+/* Header */
+.site-header{position:fixed;inset:0 0 auto 0;z-index:100;height:var(--header-h);color:var(--white);border-bottom:1px solid transparent;transition:background .3s,color .3s,border-color .3s}
+.site-header.solid,.site-header.open{background:var(--white);color:var(--black);border-bottom-color:var(--line)}
+.bar{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:inline-flex;align-items:center;gap:12px}
+.logo-mark{width:40px;height:40px;background:var(--black);border:1px solid rgba(255,255,255,.6);display:grid;place-items:center}
+.logo-mark svg{width:24px;height:24px}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-text strong{font-family:var(--font-head);font-size:1.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.logo-text small{font-size:.62rem;letter-spacing:.5em;text-transform:uppercase;margin-top:4px}
+.nav{display:flex;align-items:center;gap:24px}
+.nav ul{display:flex;gap:20px}
+.nav ul a{font-size:.88rem;font-weight:500;padding:6px 0;border-bottom:1px solid transparent;transition:border-color .25s}
+.nav ul a:hover,.nav ul a.active{border-bottom-color:currentColor}
+.nav .btn{min-height:44px;padding:0 22px;font-size:.85rem;white-space:nowrap}
+.site-header:not(.solid):not(.open) .nav .btn{background:var(--white);color:var(--black);border-color:var(--white)}
+.toggle{display:none;width:44px;height:44px;background:none;border:0;cursor:pointer;position:relative}
+.toggle span{position:absolute;left:10px;right:10px;height:2px;background:currentColor;transition:transform .3s,opacity .2s}
+.toggle span:nth-child(1){top:15px}.toggle span:nth-child(2){top:21px}.toggle span:nth-child(3){top:27px}
+.toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:1120px){
+  .toggle{display:block}
+  .nav{position:fixed;top:var(--header-h);left:0;right:0;bottom:0;flex-direction:column;align-items:stretch;gap:24px;padding:28px var(--pad);background:var(--white);color:var(--black);overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .3s,transform .3s,visibility .3s}
+  .nav.open{opacity:1;visibility:visible;transform:none}
+  .nav ul{flex-direction:column;gap:0}
+  .nav ul a{display:block;padding:14px 0;font-family:var(--font-head);font-size:1.8rem;font-weight:600;border-bottom:1px solid var(--line)}
+  .nav .btn{background:var(--black)!important;color:var(--white)!important;min-height:54px}
+}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;color:var(--white);background:#222;overflow:hidden}
+.hero-bg{position:absolute;inset:-6% 0;background:url("https://images.unsplash.com/photo-1721222204126-e7042f2893b1?auto=format&fit=crop&w=2200&q=75") center/cover no-repeat;will-change:transform;animation:zoom 2.6s var(--ease) both}
+@keyframes zoom{from{scale:1.12}to{scale:1}}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(0,0,0,.88),rgba(0,0,0,.35) 60%,rgba(0,0,0,.4))}
+.hero .container{position:relative;z-index:2;padding-top:calc(var(--header-h) + 40px);padding-bottom:clamp(56px,9vw,110px)}
+.kicker{display:flex;align-items:center;gap:12px;font-size:.88rem;color:rgba(255,255,255,.88);margin-bottom:22px}
+.kicker::before{content:"";width:36px;height:1px;background:currentColor}
+.hero h1{font-size:clamp(3rem,7.4vw,6.2rem);max-width:12ch;color:var(--white)}
+.hero p{color:rgba(255,255,255,.88);font-size:clamp(1rem,1.4vw,1.15rem);max-width:54ch;margin-top:26px}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:10px 36px;margin-top:clamp(40px,6vw,72px);padding-top:22px;border-top:1px solid rgba(255,255,255,.3);font-size:.9rem;font-weight:500}
+.hero-facts li{display:flex;align-items:center;gap:10px}
+.hero-facts .ico{width:18px;height:18px}
+.hero .container>*{animation:rise .9s var(--ease) both}
+.hero .container>:nth-child(2){animation-delay:.15s}.hero .container>:nth-child(3){animation-delay:.3s}.hero .container>:nth-child(4){animation-delay:.45s}.hero .container>:nth-child(5){animation-delay:.6s}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+/* Services */
+.svc{display:grid;gap:24px}
+.scard{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .3s}
+.js .scard.in:hover{transform:translateY(-8px);transition-delay:0s}
+.scard:hover{border-color:var(--black);box-shadow:0 24px 50px rgba(0,0,0,.14)}
+.scard .pic{position:relative;aspect-ratio:16/10;background:var(--grey-2)}
+.scard .clip i{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1.2s var(--ease)}
+.scard:hover .clip i{transform:scale(1.08)}
+.scard .badge{position:absolute;left:24px;bottom:-26px;z-index:2;width:56px;height:56px;background:var(--black);color:var(--white);display:grid;place-items:center;transition:background .3s,color .3s}
+.scard:hover .badge{background:var(--white);color:var(--black);box-shadow:0 0 0 1px var(--black)}
+.scard .badge .ico{width:28px;height:28px}
+.scard .clip{position:absolute;inset:0;overflow:hidden}
+.scard .box{padding:44px 24px 26px;display:flex;flex-direction:column;gap:12px;flex:1}
+.scard p{font-size:.95rem}
+.scard ul{margin:6px 0 0;border-top:1px solid var(--line)}
+.scard ul li{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.9rem;font-weight:500}
+.scard ul .ico{width:16px;height:16px;flex:none}
+.scard .more{margin-top:auto;padding-top:14px;font-weight:600;font-size:.9rem;display:inline-flex;gap:8px;align-self:flex-start}
+.scard .more::after{content:"\2192";transition:transform .3s var(--ease)}
+.scard:hover .more::after{transform:translateX(5px)}
+@media(min-width:700px){.svc{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.svc{grid-template-columns:repeat(3,1fr)}}
+
+/* Process */
+.flow{display:grid;gap:36px}
+.step{position:relative;padding-top:26px}
+.step::before,.step::after{content:"";position:absolute;top:0;left:0;right:0;height:2px}
+.step::before{background:#cfcfcf}
+.step::after{background:var(--black);transform:scaleX(0);transform-origin:left;transition:transform 1.1s var(--ease) var(--d,0s)}
+.flow.in .step::after{transform:scaleX(1)}
+.step b{display:block;font-family:var(--font-head);font-size:3.2rem;line-height:1;font-weight:600;margin-bottom:12px}
+.step h3{margin-bottom:8px}.step p{font-size:.95rem}
+@media(min-width:800px){.flow{grid-template-columns:repeat(4,1fr);gap:28px}}
+
+/* Calculator */
+.calc{display:grid;gap:40px;align-items:start}
+.calc-copy h2{color:var(--white);margin-bottom:20px}.calc-copy p{color:#bdbdbd}
+.calc-copy small{display:block;margin-top:24px;color:#8f8f8f;font-size:.82rem;line-height:1.6;max-width:50ch}
+.panel{background:var(--white);color:var(--black);padding:clamp(24px,4vw,44px);display:grid;gap:26px}
+.panel label,.panel legend{font-weight:600;font-size:.9rem}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+.area-row{display:grid;grid-template-columns:1fr 130px;gap:16px;align-items:center;margin-top:10px}
+input[type=number]{width:100%;min-height:50px;padding:0 14px;border:1px solid var(--line);border-radius:0;background:var(--white)}
+input[type=number]:focus{outline:none;border-color:var(--black);box-shadow:0 0 0 1px var(--black)}
+input[type=range]{width:100%;accent-color:var(--black);height:28px}
+.pkgs{display:grid;gap:10px;margin-top:10px}
+.pkg{position:relative}
+.pkg input{position:absolute;opacity:0;inset:0;cursor:pointer;width:100%;height:100%;margin:0}
+.pkg span{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:14px 16px;border:1px solid var(--line);transition:background .2s,color .2s,border-color .2s}
+.pkg b{font-weight:600}.pkg em{font-style:normal;font-size:.85rem;opacity:.75}
+.pkg input:checked+span{background:var(--black);color:var(--white);border-color:var(--black)}
+.pkg input:focus-visible+span{outline:2px solid var(--black);outline-offset:3px}
+.result{border-top:1px solid var(--black);padding-top:22px}
+.result small{font-size:.8rem;color:var(--text-2)}
+.result .big{font-family:var(--font-head);font-size:clamp(2.4rem,5vw,3.4rem);font-weight:600;line-height:1.05;margin:6px 0 4px;color:var(--black)}
+.result .big.tick{animation:tick .35s var(--ease)}
+@keyframes tick{from{opacity:.3;transform:translateY(6px)}to{opacity:1;transform:none}}
+.result .rng{font-size:.92rem}
+.result .btn{margin-top:20px;width:100%}
+@media(min-width:960px){.calc{grid-template-columns:.9fr 1.1fr;gap:88px}.pkgs{grid-template-columns:repeat(3,1fr)}.pkg span{flex-direction:column;align-items:flex-start;gap:2px}}
+
+/* Projects */
+.pgrid{display:grid;gap:24px}
+.proj{position:relative;display:block;aspect-ratio:4/5;color:var(--white);background:#222;overflow:hidden}
+.proj i{position:absolute;inset:0;background:center/cover no-repeat;transition:transform 1.2s var(--ease)}
+.proj:hover i{transform:scale(1.07)}
+.proj::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(0,0,0,.88),rgba(0,0,0,.05) 60%)}
+.proj div{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:26px;transition:transform .5s var(--ease)}
+.proj:hover div{transform:translateY(-6px)}
+.proj h3{color:var(--white);font-size:1.8rem}
+.proj span{font-size:.88rem;color:rgba(255,255,255,.82)}
+.proj em{position:absolute;z-index:2;top:0;left:0;background:var(--white);color:var(--black);font-style:normal;font-size:.78rem;font-weight:600;padding:6px 14px}
+.proj-cta{margin-top:clamp(36px,5vw,56px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;border-top:1px solid var(--black);padding-top:28px}
+@media(min-width:700px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.pgrid{grid-template-columns:repeat(3,1fr)}}
+
+/* Reviews: auto-scrolling marquee */
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.track{display:flex;gap:24px;width:max-content;animation:slide 60s linear infinite}
+.marquee:hover .track,.marquee:focus-within .track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(calc(-50% - 12px))}}
+.rev{flex:none;width:min(380px,82vw);background:var(--white);border:1px solid var(--line);padding:30px;display:flex;flex-direction:column;gap:18px}
+.rev .q{font-family:var(--font-head);font-size:4.5rem;line-height:.6;height:2rem}
+.rev blockquote{font-family:var(--font-head);font-size:1.45rem;line-height:1.3;font-weight:500;flex:1}
+.rev figcaption{display:flex;align-items:center;gap:14px;border-top:1px solid var(--line);padding-top:16px;font-size:.92rem}
+.rev .av{width:44px;height:44px;border-radius:50%;background:var(--black);color:var(--white);display:grid;place-items:center;font-weight:600;font-size:.82rem;flex:none}
+.rev figcaption small{display:block;color:var(--text-2);font-size:.82rem}
+.rev .flag{margin-left:auto;font-size:.68rem;font-weight:600;border:1px dashed var(--text-2);padding:2px 8px;color:var(--text-2);font-style:normal}
+
+/* Location */
+.loc{display:grid;gap:40px;align-items:stretch}
+.loc-list{margin:28px 0;border-top:1px solid var(--line)}
+.loc-list li{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.loc-list .ico{margin-top:5px;width:20px;height:20px;flex:none}
+.loc-list strong{display:block;font-size:.9rem}.loc-list span,.loc-list a{color:var(--text-2)}
+.map{min-height:420px;border:1px solid var(--line);background:var(--grey-2);position:relative}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.05)}
+@media(min-width:900px){.loc{grid-template-columns:1fr 1.3fr;gap:80px}}
+
+/* Interiors */
+.int{display:grid;gap:48px;align-items:center}
+.int-media{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--grey-2)}
+.int-media i{position:absolute;inset:0;background:center/cover no-repeat;transition:transform 1.4s var(--ease)}
+.int-media:hover i{transform:scale(1.05)}
+.int-media small{position:absolute;left:0;bottom:0;background:var(--white);padding:12px 20px;font-weight:600;font-size:.88rem}
+.int h2{margin-bottom:20px}
+.int .checks{margin:28px 0 34px;border-top:1px solid var(--line)}
+.int .checks li{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-weight:500}
+.int .checks .ico{width:22px;height:22px;padding:4px;border-radius:50%;background:var(--black);color:var(--white);flex:none}
+@media(min-width:900px){.int{grid-template-columns:1fr 1fr;gap:96px}}
+
+/* Sticky contact icons */
+.dock{position:fixed;z-index:90;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.dock a{position:relative;display:flex;flex-direction:row-reverse;align-items:center;height:56px;min-width:56px;padding:0 16px;border-radius:999px;background:var(--black);color:var(--white);box-shadow:0 10px 28px rgba(0,0,0,.3),inset 0 0 0 1px rgba(255,255,255,.35);transition:background .3s,color .3s,transform .3s var(--ease),box-shadow .3s}
+.dock .ico{width:24px;height:24px;flex:none}
+.dock .ig-static{cursor:default}
+.dock .lbl{max-width:0;overflow:hidden;white-space:nowrap;opacity:0;font-size:.85rem;font-weight:600;transition:max-width .4s var(--ease),opacity .3s,margin .4s var(--ease)}
+.dock a:hover,.dock a:focus-visible{background:var(--white);color:var(--black);transform:translateX(-4px);box-shadow:0 10px 28px rgba(0,0,0,.3),0 0 0 1px var(--black)}
+.dock a:hover .lbl,.dock a:focus-visible .lbl{max-width:120px;opacity:1;margin-right:12px}
+.dock .call::after{content:"";position:absolute;inset:0;border-radius:999px;border:1.5px solid var(--black);animation:ring 2.6s var(--ease) infinite;pointer-events:none}
+@keyframes ring{0%{transform:scale(1);opacity:.5}70%,100%{transform:scale(1.5);opacity:0}}
+@media(max-width:720px){.dock{right:14px}.dock a{height:52px;min-width:52px;padding:0 14px}}
+
+/* Footer */
+.footer{background:var(--black);color:var(--white);padding-top:clamp(56px,8vw,88px)}
+.footer p,.footer li{color:#a8a8a8}
+.fgrid{display:grid;gap:36px;padding-bottom:48px}
+.footer h4{font-family:var(--font-body);font-size:.85rem;font-weight:600;letter-spacing:.08em;margin:0 0 18px}
+.footer li{margin-bottom:10px;font-size:.95rem}.footer li a:hover{color:var(--white)}
+.fbrand p{margin-top:20px;max-width:34ch;font-size:.95rem}
+.fbottom{border-top:1px solid #2c2c2c;padding-block:22px;font-size:.88rem;color:#a8a8a8}
+@media(min-width:640px){.fgrid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.fgrid{grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:56px}}
+
+/* Reveal */
+.js [data-r]{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease) var(--d,0s),transform .8s var(--ease) var(--d,0s)}
+.js [data-r].in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  .js [data-r]{opacity:1;transform:none}.flow .step::after{transform:scaleX(1)}
+  .marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 48 48"><path d="M6 40h36M10 40V18l14-10 14 10v22M18 40V28h12v12" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-villa" viewBox="0 0 48 48"><path d="M4 42h40M8 42V24l10-8 10 8v18M28 42V14l8-6 8 6v28M14 42v-8h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-apt" viewBox="0 0 48 48"><path d="M10 42V6h20v36M30 18h8v24M4 42h40M16 14h8M16 22h8M16 30h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-reno" viewBox="0 0 48 48"><path d="M6 42l20-20M22 12l8-8 14 14-8 8zM26 22l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-frame" viewBox="0 0 48 48"><path d="M8 8h32v32H8zM8 24h32M24 8v32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-key" viewBox="0 0 48 48"><circle cx="15" cy="32" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M21 26L42 8M34 16l5 5M28 21l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z" fill="currentColor"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+</svg>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="site-header" id="header">
+  <div class="container bar">
+    <a href="index.html" class="logo" aria-label="Skandha Groups home">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16M4 12h16M4 6h16" stroke="#fff" stroke-width="2"/></svg></span>
+      <span class="logo-text"><strong>Skandha</strong><small>Groups</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="interiors.html">Interiors</a></li>
+        <li><a href="#calculator">Cost Calculator</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#location">Location</a></li>
+      </ul>
+      <a href="#calculator" class="btn">Estimate Your Cost</a>
+    </nav>
+    <button class="toggle" id="toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-bg" id="heroBg" role="img" aria-label="Modern house with a pool and landscaped garden"></div>
+  <div class="container">
+    <p class="kicker">Residential construction in Bengaluru</p>
+    <h1>We Build Homes That Last.</h1>
+    <p>From drawings and approvals to structure and finishing, Skandha Groups builds independent homes, villas and apartment blocks with clear milestones at every stage.</p>
+    <div class="actions">
+      <a href="#calculator" class="btn btn-light">Estimate Your Cost</a>
+      <a href="projects.html" class="btn btn-ghost">View Projects</a>
+    </div>
+    <ul class="hero-facts">
+      <li><svg class="ico"><use href="#i-check"/></svg>Design and drawings</li>
+      <li><svg class="ico"><use href="#i-check"/></svg>Approvals support</li>
+      <li><svg class="ico"><use href="#i-check"/></svg>RCC structure</li>
+      <li><svg class="ico"><use href="#i-check"/></svg>Turnkey handover</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="head split" data-r>
+      <h2>Construction Services</h2>
+      <p>Whatever you are building, we take it from the first site visit to the day you receive the keys.</p>
+    </div>
+    <ul class="svc">
+      <li class="scard" data-r style="--d:0.0s"><div class="pic"><div class="clip"><i role="img" aria-label="Independent Homes" style="background-image:url('https://images.unsplash.com/photo-1721222204126-e7042f2893b1?auto=format&fit=crop&w=900&q=75')"></i></div><span class="badge"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg></span></div><div class="box"><h3>Independent Homes</h3><p>Custom houses built on your plot, planned around your family and budget.</p><ul><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Plans for 30x40 to 50x80 plots</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Vastu-friendly layouts</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Fixed scope and schedule</li></ul><a class="more" href="#calculator">Estimate this build</a></div></li>
+      <li class="scard" data-r style="--d:0.1s"><div class="pic"><div class="clip"><i role="img" aria-label="Villas and Duplexes" style="background-image:url('https://images.unsplash.com/photo-1768164630015-1ad8a3a574fe?auto=format&fit=crop&w=900&q=75')"></i></div><span class="badge"><svg class="ico" aria-hidden="true"><use href="#i-villa"/></svg></span></div><div class="box"><h3>Villas and Duplexes</h3><p>Multi-floor homes with detailed elevations, staircases and terraces.</p><ul><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Ground plus 2 floors and more</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Detailed elevation drawings</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Terraces and courtyards</li></ul><a class="more" href="#calculator">Estimate this build</a></div></li>
+      <li class="scard" data-r style="--d:0.2s"><div class="pic"><div class="clip"><i role="img" aria-label="Apartment Buildings" style="background-image:url('https://images.unsplash.com/photo-1760894492960-5b0a2da0676d?auto=format&fit=crop&w=900&q=75')"></i></div><span class="badge"><svg class="ico" aria-hidden="true"><use href="#i-apt"/></svg></span></div><div class="box"><h3>Apartment Buildings</h3><p>Small residential blocks with stilt parking, lifts and shared amenities.</p><ul><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Stilt parking and lift shafts</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Multi-unit layouts</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Phased construction plan</li></ul><a class="more" href="#calculator">Estimate this build</a></div></li>
+      <li class="scard" data-r style="--d:0.0s"><div class="pic"><div class="clip"><i role="img" aria-label="Renovation and Extensions" style="background-image:url('https://images.unsplash.com/photo-1768505005984-689020c196fe?auto=format&fit=crop&w=900&q=75')"></i></div><span class="badge"><svg class="ico" aria-hidden="true"><use href="#i-reno"/></svg></span></div><div class="box"><h3>Renovation and Extensions</h3><p>Add floors, rework layouts or repair existing buildings safely.</p><ul><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Structural safety assessment</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Add floors on existing homes</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Waterproofing and repairs</li></ul><a class="more" href="#calculator">Estimate this build</a></div></li>
+      <li class="scard" data-r style="--d:0.1s"><div class="pic"><div class="clip"><i role="img" aria-label="Structural and RCC Work" style="background-image:url('https://images.unsplash.com/photo-1687169503260-85f00f122398?auto=format&fit=crop&w=900&q=75')"></i></div><span class="badge"><svg class="ico" aria-hidden="true"><use href="#i-frame"/></svg></span></div><div class="box"><h3>Structural and RCC Work</h3><p>Foundations, columns, beams and slabs built to the structural drawings.</p><ul><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Soil test based foundations</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Quality-checked concrete</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Site supervision by engineers</li></ul><a class="more" href="#calculator">Estimate this build</a></div></li>
+      <li class="scard" data-r style="--d:0.2s"><div class="pic"><div class="clip"><i role="img" aria-label="Turnkey Projects" style="background-image:url('https://images.unsplash.com/photo-1759882611054-fa61e7fa3099?auto=format&fit=crop&w=900&q=75')"></i></div><span class="badge"><svg class="ico" aria-hidden="true"><use href="#i-key"/></svg></span></div><div class="box"><h3>Turnkey Projects</h3><p>One team handles design, approvals, build and finishing. You collect the keys.</p><ul><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Single point of contact</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Regular progress updates</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Final quality check at handover</li></ul><a class="more" href="#calculator">Estimate this build</a></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section bg-grey" id="process">
+  <div class="container">
+    <div class="head split" data-r>
+      <h2>How We Build</h2>
+      <p>Four clear stages, so you always know where your home stands.</p>
+    </div>
+    <ol class="flow" id="flow">
+      <li class="step" data-r style="--d:0s"><b>1</b><h3>Plan and design</h3><p>Site study, floor plans, structural drawings and a clear budget.</p></li>
+      <li class="step" data-r style="--d:.25s"><b>2</b><h3>Approvals and foundation</h3><p>Permissions, soil checks, excavation and footings.</p></li>
+      <li class="step" data-r style="--d:.5s"><b>3</b><h3>Structure and shell</h3><p>Columns, slabs, masonry, plumbing and electrical rough-in.</p></li>
+      <li class="step" data-r style="--d:.75s"><b>4</b><h3>Finish and handover</h3><p>Plaster, flooring, paint, fixtures and a final quality check.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="interiors">
+  <div class="container int">
+    <div class="int-media" data-r><i role="img" aria-label="Modern kitchen with island and marble worktop" style="background-image:url('https://images.unsplash.com/photo-1769326541248-5e09a8ace25b?auto=format&fit=crop&w=1200&q=75')"></i><small>Interiors for new builds</small></div>
+    <div data-r style="--d:.12s">
+      <h2>Interiors for Your New Home</h2>
+      <p>Once the structure is done, we can carry on into the interiors, so the same team that built your home also fits it out.</p>
+      <ul class="checks">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Modular kitchens</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Wardrobes and storage</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>False ceilings and lighting</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Living and bedroom furniture</li>
+      </ul>
+      <a href="interiors.html" class="btn">Explore Interiors</a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-black" id="calculator">
+  <div class="container calc">
+    <div class="calc-copy" data-r>
+      <h2>Construction Cost Calculator</h2>
+      <p>Get a quick budget for your new home. Enter the built-up area you plan to build and choose a finish level.</p>
+      <small>This is a rough estimate for planning only. It covers construction and excludes land, approvals, interiors, furniture and taxes. The rates are placeholders: update them in the <code>RATES</code> list at the bottom of this file.</small>
+    </div>
+    <form class="panel" id="calcForm" data-r style="--d:.12s" onsubmit="return false">
+      <div>
+        <label for="area">Built-up area (sq ft)</label>
+        <div class="area-row">
+          <input type="range" id="range" min="500" max="8000" step="50" value="2000" aria-label="Built-up area slider">
+          <input type="number" id="area" min="300" max="20000" step="50" value="2000" inputmode="numeric">
+        </div>
+      </div>
+      <fieldset><legend>Finish level</legend><div class="pkgs" id="pkgs"></div></fieldset>
+      <div class="result" aria-live="polite">
+        <small>Estimated construction cost</small>
+        <p class="big" id="total"></p>
+        <p class="rng" id="range-text"></p>
+        <a class="btn" id="quote" href="#location" target="_blank" rel="noopener">Get an Exact Quote</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="head split" data-r>
+      <h2>Recent Projects</h2>
+      <p>Homes we have built and are building across Bengaluru. Open the projects page for full details on each one.</p>
+    </div>
+    <div class="pgrid">
+      <a class="proj" data-r href="projects.html#bsk-6th-stage" style="--d:0s"><i style="background-image:url('images/bsk-6th-stage.jpg')"></i><em>Ongoing</em><div><h3>BSK 6th Stage Residence</h3><span>On-going project in BSK 6th Stage, Pavamanapura Thurahalli</span></div></a>
+      <a class="proj" data-r href="projects.html#uttarahalli" style="--d:.15s"><i style="background-image:url('images/uttarahalli.jpg')"></i><em>Ongoing</em><div><h3>Uttarahalli Residence</h3><span>On-going project in Uttarahalli, near Brigade 7 Gardens Apartment</span></div></a>
+      <a class="proj" data-r href="projects.html#garden-apartments" style="--d:.3s"><i style="background-image:url('https://images.unsplash.com/photo-1760894492960-5b0a2da0676d?auto=format&fit=crop&w=1000&q=75')"></i><em>Ongoing</em><div><h3>Garden Apartments</h3><span>HSR Layout, Bengaluru</span></div></a>
+    </div>
+    <div class="proj-cta" data-r>
+      <p>See location, area, build time, scope of work and specifications for every project.</p>
+      <a href="projects.html" class="btn">View Projects</a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-grey" id="reviews">
+  <div class="container">
+    <div class="head split" data-r>
+      <h2>What Our Clients Say</h2>
+      <p>Words from the people whose homes we have built. Hover to pause.</p>
+    </div>
+  </div>
+  <!-- PLACEHOLDERS: replace the REVIEWS list in the script with genuine reviews (with permission). -->
+  <div class="marquee" tabindex="0" aria-label="Client reviews"><div class="track" id="track"></div></div>
+</section>
+
+<section class="section" id="location">
+  <div class="container loc">
+    <div data-r>
+      <h2>Visit Our Office</h2>
+      <p style="margin-top:18px">Drop in to discuss your plot, see material samples or review drawings. Please call ahead so the right engineer is ready for you.</p>
+      <ul class="loc-list">
+        <li><svg class="ico"><use href="#i-pin"/></svg><div><strong>Address</strong><span id="addr"></span></div></li>
+        <li><svg class="ico"><use href="#i-phone"/></svg><div><strong>Phone</strong><a data-tel href="tel:"><span data-v="phone"></span></a></div></li>
+        <li><svg class="ico"><use href="#i-mail"/></svg><div><strong>Email</strong><a data-mail href="mailto:"><span data-v="email"></span></a></div></li>
+        <li><svg class="ico"><use href="#i-clock"/></svg><div><strong>Office hours</strong><span id="hours"></span></div></li>
+      </ul>
+      <a href="#" class="btn" id="dir" target="_blank" rel="noopener">Get Directions</a>
+    </div>
+    <div class="map" data-r style="--d:.12s"><iframe id="map" title="Skandha Groups office on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container fgrid">
+    <div class="fbrand">
+      <a href="index.html" class="logo" aria-label="Skandha Groups home"><span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16M4 12h16M4 6h16" stroke="#fff" stroke-width="2"/></svg></span><span class="logo-text"><strong>Skandha</strong><small>Groups</small></span></a>
+      <p>Residential construction company in Bengaluru, building homes, villas and apartment blocks.</p>
+    </div>
+    <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="#services">Services</a></li><li><a href="interiors.html">Interiors</a></li><li><a href="#calculator">Cost Calculator</a></li><li><a href="projects.html">Projects</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#location">Location</a></li></ul></div>
+    <div><h4>Construction</h4><ul><li>Independent Homes</li><li>Villas and Duplexes</li><li>Apartment Buildings</li><li>Renovation</li></ul></div>
+    <div><h4>Contact</h4><ul>
+      <li><a data-tel href="tel:"><span data-v="phone"></span></a></li>
+      <li><a data-mail href="mailto:"><span data-v="email"></span></a></li>
+      <li><a data-wa href="#" target="_blank" rel="noopener">Chat on WhatsApp</a></li></ul></div>
+  </div>
+  <div class="container fbottom">&copy; <span id="year">2026</span> Skandha Groups. All rights reserved.</div>
+</footer>
+
+<nav class="dock" aria-label="Quick contact">
+  <a class="wa" data-wa href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg><span class="lbl">WhatsApp</span></a>
+  <a class="call" data-tel href="tel:" aria-label="Call us"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="lbl">Call us</span></a>
+  <a class="ig-static" role="img" aria-label="Instagram"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg><span class="lbl">Instagram</span></a>
+</nav>
+
+<script>
+/* ===== EDIT THESE with real details ===== */
+const CONTACT = { phone: "+91 91646 09709", tel: "+919164609709", whatsapp: "919164609709", email: "info@skandhagroups.com", address: "Skandha Groups, RR Nagar, Bengaluru, Karnataka", hours: "Monday to Saturday, 10:00 am to 6:00 pm",
+  mapQuery: "RR Nagar, Bengaluru, Karnataka, India" /* replace with the full office address for an exact pin */ };
+// Placeholder cost per sq ft (INR). Replace with your real rates.
+const RATES = [
+  { id: "basic", name: "Basic", rate: 1800 },
+  { id: "standard", name: "Standard", rate: 2200 },
+  { id: "premium", name: "Premium", rate: 2800 }
+];
+// Placeholder reviews. Replace with genuine ones.
+const REVIEWS = [
+  ["Independent house", "CN"], ["Villa", "CN"], ["Renovation", "CN"], ["Apartment block", "CN"], ["Extension", "CN"], ["Turnkey project", "CN"]
+];
+
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+$$("[data-tel]").forEach(a => a.href = "tel:" + CONTACT.tel);
+$$("[data-mail]").forEach(a => a.href = "mailto:" + CONTACT.email);
+$$("[data-wa]").forEach(a => a.href = "https://wa.me/" + CONTACT.whatsapp);
+$$('[data-v="phone"]').forEach(e => e.textContent = CONTACT.phone);
+$$('[data-v="email"]').forEach(e => e.textContent = CONTACT.email);
+$("#addr").textContent = CONTACT.address; $("#hours").textContent = CONTACT.hours;
+const mq = encodeURIComponent(CONTACT.mapQuery);
+$("#map").src = `https://maps.google.com/maps?q=${mq}&z=14&output=embed`;
+$("#dir").href = `https://www.google.com/maps/search/?api=1&query=${mq}`;
+$("#year").textContent = new Date().getFullYear();
+
+/* Header, menu, progress bar, hero parallax, nav highlight */
+const header = $("#header"), nav = $("#nav"), toggle = $("#toggle"), heroBg = $("#heroBg"), bar = $("#progress");
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let tick = false;
+function onScroll() {
+  tick = false;
+  const y = scrollY, max = document.documentElement.scrollHeight - innerHeight;
+  header.classList.toggle("solid", y > 40);
+  bar.style.width = (max > 0 ? Math.min(y / max, 1) * 100 : 0) + "%";
+  if (!still && y < innerHeight) heroBg.style.transform = `translate3d(0,${y * .25}px,0)`;
+}
+onScroll(); addEventListener("scroll", () => { if (!tick) { tick = true; requestAnimationFrame(onScroll); } }, { passive: true });
+function setMenu(o) { nav.classList.toggle("open", o); header.classList.toggle("open", o); toggle.setAttribute("aria-expanded", o); toggle.setAttribute("aria-label", o ? "Close menu" : "Open menu"); document.body.style.overflow = o ? "hidden" : ""; }
+toggle.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
+$$(".nav a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
+matchMedia("(min-width:1121px)").addEventListener("change", e => e.matches && setMenu(false));
+
+const links = $$(".nav ul a"), secs = links.map(a => $(a.getAttribute("href")));
+const reveal = els => { if ("IntersectionObserver" in window) { const io = new IntersectionObserver((es, o) => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add("in"); o.unobserve(x.target); } }), { threshold: .15 }); els.forEach(e => io.observe(e)); } else els.forEach(e => e.classList.add("in")); };
+reveal($$("[data-r]"));
+if ("IntersectionObserver" in window) {
+  const spy = new IntersectionObserver(es => es.forEach(x => x.isIntersecting && links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + x.target.id))), { rootMargin: "-45% 0px -50% 0px" });
+  secs.forEach(s => s && spy.observe(s));
+}
+reveal([$("#flow")]);
+
+/* Reviews marquee: build one set, duplicate for a seamless loop */
+const card = ([type, ini]) => `<figure class="rev"><span class="q" aria-hidden="true">&ldquo;</span><blockquote>Add a genuine client review here, in the client's own words, once you have their permission to publish it.</blockquote><figcaption><span class="av" aria-hidden="true">${ini}</span><div>Client name<small>${type}</small></div><em class="flag">Placeholder</em></figcaption></figure>`;
+const set = REVIEWS.map(card).join("");
+$("#track").innerHTML = set + (still ? "" : set.replace(/<figure /g, '<figure aria-hidden="true" '));
+
+/* Cost calculator */
+$("#pkgs").innerHTML = RATES.map((r, i) => `<label class="pkg"><input type="radio" name="pkg" value="${r.id}" ${i === 1 ? "checked" : ""}><span><b>${r.name}</b><em>₹${r.rate.toLocaleString("en-IN")} / sq ft</em></span></label>`).join("");
+const area = $("#area"), range = $("#range"), big = $("#total");
+const fmt = n => n >= 1e7 ? "₹" + (n / 1e7).toFixed(2) + " crore" : "₹" + (n / 1e5).toFixed(1) + " lakh";
+function calc() {
+  const a = Math.max(0, Number(area.value) || 0), r = RATES.find(x => x.id === $('input[name="pkg"]:checked').value), t = a * r.rate;
+  big.textContent = a ? fmt(t) : "Enter an area";
+  big.classList.remove("tick"); void big.offsetWidth; big.classList.add("tick");
+  $("#range-text").textContent = a ? `Likely range ${fmt(t * .95)} to ${fmt(t * 1.1)} for ${a.toLocaleString("en-IN")} sq ft at ${r.name} finish.` : "";
+  $("#quote").href = "https://wa.me/" + CONTACT.whatsapp + "?text=" + encodeURIComponent(`Hello Skandha Groups, I estimated ${a} sq ft at ${r.name} finish (${a ? fmt(t) : ""}) and would like an exact construction quote.`);
+}
+area.addEventListener("input", () => { range.value = Math.min(Math.max(area.value, range.min), range.max); calc(); });
+range.addEventListener("input", () => { area.value = range.value; calc(); });
+$("#pkgs").addEventListener("change", calc);
+calc();
+</script>
+</body>
+</html>

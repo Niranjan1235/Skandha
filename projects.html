@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Our Projects | Skandha Groups, Bengaluru</title>
+<meta name="description" content="Residential construction projects by Skandha Groups in Bengaluru, with location, area, scope of work and specifications.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23000'/%3E%3Cpath d='M9 29h22M9 21h22M9 13h22' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--white:#fff;--grey-1:#F3F3F3;--grey-2:#EAEAEA;--black:#000;--text-2:#555;--line:#DDD;--font-head:"Cormorant Garamond",Georgia,serif;--font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--header-h:76px;--pad:clamp(20px,5vw,48px);--ease:cubic-bezier(.2,.7,.2,1)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 80px)}
+body{margin:0;font-family:var(--font-body);line-height:1.7;color:var(--black);background:var(--white);overflow-x:hidden;padding-top:env(safe-area-inset-top,0px)}
+a{color:inherit;text-decoration:none}ul,dl,dd{list-style:none;margin:0;padding:0}h1,h2,h3,p{margin:0}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--black);outline-offset:3px}
+h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.05;letter-spacing:-.01em}
+p{color:var(--text-2);max-width:62ch}
+.container{width:100%;max-width:1296px;margin-inline:auto;padding-inline:var(--pad)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 32px;font-size:.92rem;font-weight:600;border:1px solid var(--black);background:var(--black);color:var(--white);cursor:pointer;transition:background .25s,color .25s}
+.btn:hover{background:var(--white);color:var(--black)}
+.btn-sm{min-height:44px;padding:0 22px;font-size:.85rem}
+.btn-secondary{background:var(--white);color:var(--black)}.btn-secondary:hover{background:var(--black);color:var(--white)}
+
+.top{position:sticky;top:0;z-index:50;height:var(--header-h);background:var(--white);border-bottom:1px solid var(--line)}
+.top .container{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:inline-flex;align-items:center;gap:12px}
+.logo-mark{width:40px;height:40px;background:var(--black);display:grid;place-items:center}
+.logo-mark svg{width:24px;height:24px}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-text strong{font-family:var(--font-head);font-size:1.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.logo-text small{font-size:.62rem;font-weight:500;letter-spacing:.5em;text-transform:uppercase;margin-top:4px}
+.top-links{display:flex;align-items:center;gap:22px;font-size:.9rem;font-weight:500}
+.top-links .back:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:560px){.top-links .btn{display:none}}
+
+.intro{background:var(--black);color:var(--white);padding-block:clamp(64px,9vw,120px)}
+.intro h1{font-size:clamp(3rem,7vw,5.6rem);color:var(--white);max-width:12ch}
+.intro p{color:#bdbdbd;margin-top:24px;font-size:1.05rem}
+.crumbs{font-size:.85rem;color:#bdbdbd;margin-bottom:28px}
+.crumbs a{text-decoration:underline;text-underline-offset:3px}
+
+.note{background:var(--grey-2);border-bottom:1px solid var(--line);font-size:.88rem}
+.note .container{padding-block:12px}
+.note p{max-width:none;color:var(--black)}
+
+.bar{position:sticky;top:var(--header-h);z-index:40;background:var(--white);border-bottom:1px solid var(--line)}
+.bar .container{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{min-height:44px;padding:0 20px;background:var(--white);border:1px solid var(--line);cursor:pointer;font-size:.9rem;font-weight:500;transition:background .25s,color .25s,border-color .25s}
+.chip:hover{border-color:var(--black)}
+.chip[aria-pressed="true"]{background:var(--black);color:var(--white);border-color:var(--black)}
+#count{font-size:.9rem;color:var(--text-2)}
+
+.list{padding-block:clamp(48px,7vw,96px)}
+.proj{display:grid;gap:32px;padding-block:clamp(40px,6vw,72px);border-bottom:1px solid var(--line)}
+.proj:last-child{border-bottom:0}
+.proj[hidden]{display:none}
+.p-media{position:relative;aspect-ratio:4/3;background:var(--grey-2) center/cover no-repeat;align-self:start}
+.p-status{position:absolute;left:0;top:0;background:var(--black);color:var(--white);padding:8px 16px;font-size:.8rem;font-weight:600}
+.p-status.ongoing{background:var(--white);color:var(--black)}
+.p-body h2{font-size:clamp(2.1rem,4vw,3.2rem);margin-bottom:14px}
+.p-loc{font-weight:600;color:var(--black);font-size:.95rem;margin-bottom:14px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);margin:28px 0;border-top:1px solid var(--black)}
+.facts div{padding:14px 12px 14px 0;border-bottom:1px solid var(--line)}
+.facts dt{font-size:.78rem;color:var(--text-2);font-weight:500}
+.facts dd{font-weight:600;font-size:.98rem;line-height:1.4}
+.p-body h3{font-size:1.5rem;margin:28px 0 10px}
+.scope{columns:1}
+.scope li{position:relative;padding:9px 0 9px 26px;border-bottom:1px solid var(--line);font-size:.95rem;break-inside:avoid}
+.scope li::before{content:"";position:absolute;left:2px;top:17px;width:10px;height:5px;border-left:2px solid var(--black);border-bottom:2px solid var(--black);transform:rotate(-45deg)}
+.spec{border-top:1px solid var(--line)}
+.spec div{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.93rem}
+.spec dt{font-weight:600}.spec dd{color:var(--text-2)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gallery a{display:block;aspect-ratio:3/4;overflow:hidden;border:1px solid var(--line);background:#eee}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.gallery a:hover img{transform:scale(1.04)}
+.p-cta{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
+.none{padding:48px 0;text-align:center}.none p{margin:0 auto}
+@media(min-width:960px){
+  .proj{grid-template-columns:1fr 1.05fr;gap:80px}
+  .proj:nth-child(even) .p-media{order:2}
+  .p-media{position:sticky;top:calc(var(--header-h) + 90px)}
+  .scope{columns:2;column-gap:32px}
+}
+
+.cta{background:var(--grey-1);padding-block:clamp(64px,8vw,110px);text-align:center}
+.cta h2{font-size:clamp(2.2rem,4.5vw,3.6rem);max-width:16ch;margin-inline:auto}
+.cta p{margin:18px auto 32px}
+.foot{background:var(--black);color:#a8a8a8;padding-block:28px;font-size:.88rem}
+.foot .container{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+.foot a:hover{color:var(--white)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="container">
+    <a href="index.html" class="logo" aria-label="Skandha Groups home">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16M4 12h16M4 6h16" stroke="#fff" stroke-width="2"/></svg></span>
+      <span class="logo-text"><strong>Skandha</strong><small>Groups</small></span>
+    </a>
+    <div class="top-links">
+      <a class="back" href="index.html#construction">Back to home</a>
+      <a class="btn btn-sm" href="index.html#contact">Get a Free Consultation</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="intro">
+    <div class="container">
+      <p class="crumbs"><a href="index.html">Home</a> / Projects</p>
+      <h1>Our Construction Projects</h1>
+      <p>Every project below lists its location, size, timeline, scope of work and specifications, so you can see exactly what we build and how.</p>
+    </div>
+  </section>
+
+  <!-- REMOVE this note once the projects below are replaced with your real ones -->
+  <div class="note"><div class="container"><p><strong>Sample content:</strong> the project names, figures and photos on this page are placeholders. Replace the <code>PROJECTS</code> list in the script at the bottom of this file with your real projects.</p></div></div>
+
+  <div class="bar">
+    <div class="container">
+      <div class="filters" role="group" aria-label="Filter projects by status">
+        <button class="chip" type="button" data-f="all" aria-pressed="true">All projects</button>
+        <button class="chip" type="button" data-f="Completed" aria-pressed="false">Completed</button>
+        <button class="chip" type="button" data-f="Ongoing" aria-pressed="false">Ongoing</button>
+      </div>
+      <p id="count" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <section class="list">
+    <div class="container" id="list"></div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Planning to build a home?</h2>
+      <p>Share your plot details and budget. Our team will get back to you to talk through design, cost and timeline.</p>
+      <a href="index.html#contact" class="btn">Get a Free Consultation</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <p style="color:inherit">&copy; <span id="year">2026</span> Skandha Groups. All rights reserved.</p>
+    <a href="index.html">Back to Skandha Groups home</a>
+  </div>
+</footer>
+
+<script>
+/* ==========================================================
+   EDIT THIS LIST with your real projects. Each entry becomes a
+   full project block. status must be "Completed" or "Ongoing".
+   ========================================================== */
+const PROJECTS = [
+  {
+    id: "bsk-6th-stage", name: "BSK 6th Stage Residence", status: "Ongoing",
+    location: "BSK 6th Stage, Pavamanapura Thurahalli, Bengaluru", type: "Residential construction",
+    image: "images/bsk-6th-stage.jpg",
+    gallery: ["images/bsk-site-1.jpg", "images/bsk-site-2.jpg", "images/bsk-site-3.jpg"],
+    summary: "On-going project in BSK 6th Stage, Pavamanapura Thurahalli."
+  },
+  {
+    id: "uttarahalli", name: "Uttarahalli Residence", status: "Ongoing",
+    location: "Uttarahalli, near Brigade 7 Gardens Apartment, Bengaluru", type: "Residential construction",
+    image: "images/uttarahalli.jpg",
+    gallery: ["images/uttarahalli-site-1.jpg", "images/uttarahalli-site-2.jpg", "images/uttarahalli-site-3.jpg"],
+    summary: "On-going project in Uttarahalli, near Brigade 7 Gardens Apartment."
+  },
+  {
+    id: "garden-apartments", name: "Garden Apartments", status: "Ongoing", year: "Expected 2027",
+    location: "HSR Layout, Bengaluru", type: "Apartment building",
+    plot: "50 × 80 ft (4,000 sq ft)", builtUp: "14,500 sq ft", floors: "Stilt + 4",
+    duration: "20 months (planned)",
+    image: "https://images.unsplash.com/photo-1760894492960-5b0a2da0676d?auto=format&fit=crop&w=1400&q=75",
+    summary: "A small residential block of eight apartments with stilt parking, a lift and a shared terrace garden. Structure is complete up to the third floor.",
+    scope: ["Design and approvals", "Foundation and basement parking", "RCC frame and slabs", "Lift shaft and staircase", "Block masonry and plastering", "Electrical and plumbing rough-in", "Finishing (in progress)"],
+    specs: { Structure: "RCC framed, M30 concrete", Units: "Eight 2 and 3 BHK apartments", Parking: "Stilt parking for 8 cars", Amenities: "Lift, terrace garden, rainwater harvesting", Status: "Structure done to 3rd floor" }
+  },
+  {
+    id: "terrace-duplex", name: "Terrace Duplex Extension", status: "Completed", year: "2025",
+    location: "Jayanagar, Bengaluru", type: "Renovation and extension",
+    plot: "30 × 40 ft (1,200 sq ft)", builtUp: "1,900 sq ft added", floors: "Two floors added",
+    duration: "8 months",
+    image: "https://images.unsplash.com/photo-1768505005984-689020c196fe?auto=format&fit=crop&w=1400&q=75",
+    summary: "Two new floors built on top of an existing home while the family stayed in, with a new staircase and a rooftop sit-out.",
+    scope: ["Structural assessment of existing building", "Column and footing strengthening", "New floors in RCC", "Staircase addition", "Electrical and plumbing extension", "Waterproofing of terrace", "Painting and finishing"],
+    specs: { Structure: "Strengthened columns, RCC slabs", Walls: "Lightweight concrete blocks", Flooring: "Vitrified tiles", Windows: "UPVC", Extras: "Rooftop sit-out, solar panel provision" }
+  }
+];
+
+const list = document.getElementById("list");
+const count = document.getElementById("count");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+list.innerHTML = PROJECTS.map(p => `
+  <article class="proj" id="${esc(p.id)}" data-status="${esc(p.status)}">
+    <div class="p-media" role="img" aria-label="${esc(p.name)}" style="background-image:url('${esc(p.image)}')">
+      <span class="p-status ${p.status === "Ongoing" ? "ongoing" : ""}">${esc(p.status)}</span>
+    </div>
+    <div class="p-body">
+      <h2>${esc(p.name)}</h2>
+      <p class="p-loc">${esc(p.location)}</p>
+      <p>${esc(p.summary)}</p>
+      ${[["Project type", p.type],[p.status === "Ongoing" ? "Completion" : "Completed", p.year],["Plot size", p.plot],["Built-up area", p.builtUp],["Floors", p.floors],["Build time", p.duration]].filter(f => f[1]).length ? `<dl class="facts">${[["Project type", p.type],[p.status === "Ongoing" ? "Completion" : "Completed", p.year],["Plot size", p.plot],["Built-up area", p.builtUp],["Floors", p.floors],["Build time", p.duration]].filter(f => f[1]).map(f => `<div><dt>${esc(f[0])}</dt><dd>${esc(f[1])}</dd></div>`).join("")}</dl>` : ""}
+      ${p.scope ? `<h3>Scope of work</h3>
+      <ul class="scope">${p.scope.map(i => `<li>${esc(i)}</li>`).join("")}</ul>` : ""}
+      ${p.specs ? `<h3>Specifications</h3>
+      <dl class="spec">${Object.entries(p.specs).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>` : ""}
+      ${p.gallery ? `<h3>Site progress</h3>
+      <div class="gallery">${p.gallery.map((g, i) => `<a href="${esc(g)}" target="_blank" rel="noopener" aria-label="${esc(p.name)} site photo ${i + 1}"><img src="${esc(g)}" alt="${esc(p.name)} site photo ${i + 1}" loading="lazy"></a>`).join("")}</div>` : ""}
+      <div class="p-cta">
+        <a class="btn" href="index.html#contact">Enquire About a Similar Project</a>
+      </div>
+    </div>
+  </article>`).join("") + '<div class="none" id="none" hidden><p>No projects in this category yet.</p></div>';
+
+const chips = [...document.querySelectorAll(".chip")];
+function filter(f) {
+  let n = 0;
+  list.querySelectorAll(".proj").forEach(el => {
+    const show = f === "all" || el.dataset.status === f;
+    el.hidden = !show; if (show) n++;
+  });
+  chips.forEach(c => c.setAttribute("aria-pressed", String(c.dataset.f === f)));
+  document.getElementById("none").hidden = n > 0;
+  count.textContent = n + (n === 1 ? " project" : " projects");
+}
+chips.forEach(c => c.addEventListener("click", () => filter(c.dataset.f)));
+filter("all");
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
